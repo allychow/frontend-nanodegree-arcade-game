@@ -39,7 +39,7 @@ Player.prototype.update = function(dt) {
     // all computers.
     allEnemies.forEach(function(enemy) {
         if ((this.x == Math.ceil(enemy.x) || this.x == Math.floor(enemy.x)) && this.y == enemy.y) {
-            player.reset();
+            this.reset();
         }
     }, this);
 };
@@ -57,7 +57,7 @@ Player.prototype.handleInput = function(key) {
         if (this.y != 1) {
             this.y -= 1;
         } else {
-            player.reset();
+            this.reset();
         }
     } else if (key === 'right' && this.x != 4) {
         this.x += 1;
